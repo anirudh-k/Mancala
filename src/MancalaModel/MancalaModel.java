@@ -22,7 +22,7 @@ public interface MancalaModel {
    * Executes a move in the game according to the given list of rules
    * @param turn  which players turn it is
    * @param cup   the cup to move from
-   * @param rules
+   * @param rules the rules to apply to the move
    * @param board the current board configuration
    */
   void move(int turn, int cup, List<MancalaRule> rules, List<Integer> board);
