@@ -15,4 +15,12 @@ public interface MancalaRule {
    */
   void apply(MancalaModel model, int beginCup, int endCup);
 
+
+  void onMoveBegin(Runnable r);
+
+  void onMoveEnd(Runnable r);
+
+  //void onPiece
+
+
 }
