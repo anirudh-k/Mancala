@@ -49,7 +49,7 @@ public class TwoPlayerMancalaModel implements MancalaModel {
 
   @Override
   public int getTurn() {
-    return 0;
+    return turn;
   }
 
   @Override
@@ -59,6 +59,10 @@ public class TwoPlayerMancalaModel implements MancalaModel {
 
   @Override
   public boolean isGameOver() {
-    return false;
+    boolean gameOver = false;
+    for(int i = 0; i < board.size(); i += 1) {
+      gameOver = gameOver || (i != 0 && i != board.size()/2 && board.get(i) > 0);
+    }
+    return gameOver;
   }
 }
