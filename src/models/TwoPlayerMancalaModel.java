@@ -15,7 +15,6 @@ public class TwoPlayerMancalaModel implements MancalaModel {
 
   /**
    * Convenience Constructor
-   *
    * @param board the board configuration
    * @param turn  which players turn it is
    * @param rules the rules with which to play the game
@@ -40,8 +39,6 @@ public class TwoPlayerMancalaModel implements MancalaModel {
   @Override
   public void move(Board board, int turn, Cup cup, List<MancalaRule> rules) {
     int hand = cup.take();
-
-
   }
 
   @Override
