@@ -12,10 +12,11 @@ package models;
 public interface MancalaRule {
 
   /**
-   * Applies this rule to a cup in a move and the current hand
+   * Applies this rule to a cup in a move and the current hand. By convention, rules should be
+   * applied after the hand has dealt a stone into the given cup.
    * @param model the model in which the move is made
    * @param cup   the cup having the rule applied
-   * @param hand  the current hand
+   * @param hand  the current hand after placing a stone into the cup
    */
   void apply(MancalaModel model, Cup cup, int hand);
 

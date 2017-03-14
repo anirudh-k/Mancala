@@ -18,10 +18,23 @@ public interface MancalaModel {
   void move(Board board, int turn, Cup cup, List<MancalaRule> rules);
 
   /**
-   * Gets which player's turn it is.
-   * @return 1 if it is player 1's turn, 2 for player 2, etc.
+   * Gets which owningPlayer's turn it is.
+   * @return 1 if it is owningPlayer 1's turn, 2 for owningPlayer 2, etc.
    */
   int getTurn();
+
+  /**
+   * Sets turn to the given integer
+   * @param turn set turn to this value
+   */
+  void setTurn(int turn);
+
+  /**
+   * Gets the given owningPlayer's score
+   * @param player the given owningPlayer (1 for owningPlayer 1, 2 for owningPlayer 2 etc.)
+   * @return an integer representing the given owningPlayer's score
+   */
+  int getScore(int player);
 
   /**
    * A game is over if there are no mancala pieces left on the board, i.e. every piece is in a

@@ -7,32 +7,32 @@ package models;
 public interface Cup {
 
   /**
-   * Gets the player who owns this cup
-   * @return an integer representing owning player
+   * Gets the owningPlayer who owns this cup
+   * @return an integer representing owning owningPlayer
    */
-  public int getPlayer();
+  int getOwningPlayer();
 
   /**
    * Gets the number of mancala stones in this cup
-   * @return an integer representing the numeber of stones in this cup
+   * @return an integer representing the number of stones in this cup
    */
-  public int getStones();
+  int getStones();
 
   /**
-   * Gets the score contributed by this cup
-   * @return an integer representing the score contributed by this cup
+   * Gets whether this cup contributes to scoring
+   * @return true if this cup adds score, false otherwise
    */
-  public int getScore();
+  boolean isScoring();
 
   /**
    * Drops stones into this cup
    * @param stones the amount to drop
    */
-  public void drop(int stones);
+  void drop(int stones);
 
   /**
    * Takes all stones from this cup
    * @return the number of stones taken from this cup
    */
-  public int take();
+  int take();
 }

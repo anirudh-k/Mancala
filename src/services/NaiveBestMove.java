@@ -11,7 +11,7 @@ public class NaiveBestMove implements BestMove {
 
   @Override
   public int bestMove(MancalaModel model) {
-    //TODO
+
     return 0;
   }
 }

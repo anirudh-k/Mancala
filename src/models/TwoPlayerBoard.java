@@ -4,7 +4,7 @@ import java.util.List;
 
 /**
  * Created by paul on 3/7/17.
- * To represent a standard two player western mancala board
+ * To represent a standard two owningPlayer western mancala board
  */
 public class TwoPlayerBoard implements Board {
   List<Cup> cups;
@@ -41,6 +41,22 @@ public class TwoPlayerBoard implements Board {
   }
 
   @Override
+  public Cup nextCup(Cup current) {
+    if (this.cups.contains(current)) {
+      int i = this.cups.indexOf(current);
+      if (i != this.cups.size()) {
+        return this.cups.get(i + 1);
+      }
+      else {
+        return this.cups.get(0);
+      }
+    }
+    else {
+      throw new IllegalArgumentException("Cup not found in the board.");
+    }
+  }
+
+  @Override
   public int getPlayers() {
     return this.players;
   }
@@ -49,7 +65,9 @@ public class TwoPlayerBoard implements Board {
   public int getScore(int player) {
     int score = 0;
     for (Cup c : cups) {
-      score += c.getScore();
+      if (c.isScoring() && c.getOwningPlayer() == player) {
+        score += c.getStones();
+      }
     }
     return score;
   }

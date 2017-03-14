@@ -6,16 +6,15 @@ package models;
  */
 public class ScoreCup implements Cup {
   int stones;
-  int player;
+  int owningPlayer;
 
-  public ScoreCup(int player) {
+  public ScoreCup(int owningPlayer) {
     this.stones = 0;
-    this.player = player;
+    this.owningPlayer = owningPlayer;
   }
 
-  @Override
-  public int getPlayer() {
-    return this.player;
+  public int getOwningPlayer() {
+    return this.owningPlayer;
   }
 
   @Override
@@ -24,8 +23,8 @@ public class ScoreCup implements Cup {
   }
 
   @Override
-  public int getScore() {
-    return this.stones;
+  public boolean isScoring() {
+    return true;
   }
 
   @Override

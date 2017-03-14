@@ -12,24 +12,31 @@ public interface Board {
    * Gets the cup information about the board
    * @return a {@code List<Cup>} representing this board
    */
-  public List<Cup> getCups();
+  List<Cup> getCups();
+
+  /**
+   * Gets the next cup in the series
+   * @param current the current cup
+   * @return the cup aafter the current cup
+   */
+  Cup nextCup(Cup current);
 
   /**
    * Gets the number of players this board was made for
    * @return an integer representing the number of players
    */
-  public int getPlayers();
+  int getPlayers();
 
   /**
    * Gets the score of the given player
    * @param player the player whose score is being accessed
-   * @return
+   * @return an integer representing the player's score
    */
-  public int getScore(int player);
+  int getScore(int player);
 
   /**
    * Sets up the board
    */
-  public void init();
+  void init();
 
 }
