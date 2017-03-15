@@ -1,4 +1,7 @@
-package models;
+package rules;
+
+import models.Cup;
+import models.MancalaModel;
 
 /**
  * Created by Paul on 12/9/2016.

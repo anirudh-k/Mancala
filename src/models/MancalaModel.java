@@ -1,6 +1,7 @@
 package models;
 
 import java.util.List;
+import rules.MancalaRule;
 
 /**
  * Created by Paul on 12/9/2016.
@@ -30,11 +31,23 @@ public interface MancalaModel {
   void setTurn(int turn);
 
   /**
-   * Gets the given owningPlayer's score
-   * @param player the given owningPlayer (1 for owningPlayer 1, 2 for owningPlayer 2 etc.)
-   * @return an integer representing the given owningPlayer's score
+   * EFFECT: Advances to the next players turn
+   * @return an integer representing the player whose turn it is
+   */
+  int nextTurn();
+
+  /**
+   * Gets the given players's score
+   * @param player the given owningPlayer (1 for player 1, 2 for player 2 etc.)
+   * @return an integer representing the given player's score
    */
   int getScore(int player);
+
+  /**
+   * Gets the number of players in the game
+   * @return an integer representing the number of players in the game
+   */
+  int getPlayers();
 
   /**
    * A game is over if there are no mancala pieces left on the board, i.e. every piece is in a

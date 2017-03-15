@@ -17,7 +17,7 @@ public interface Board {
   /**
    * Gets the next cup in the series
    * @param current the current cup
-   * @return the cup aafter the current cup
+   * @return the cup after the current cup
    */
   Cup nextCup(Cup current);
 

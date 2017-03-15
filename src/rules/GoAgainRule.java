@@ -1,4 +1,7 @@
-package models;
+package rules;
+
+import models.Cup;
+import models.MancalaModel;
 
 /**
  * Created by paul on 3/14/17.
@@ -10,7 +13,12 @@ public class GoAgainRule implements MancalaRule {
   @Override
   public void apply(MancalaModel model, Cup cup, int hand) {
     if (hand == 0 && cup.getOwningPlayer() == model.getTurn() && cup.isScoring()) {
-      model.setTurn(model.getTurn()); // TODO
+      if (model.getTurn() == 0) {
+        model.setTurn(model.getPlayers());
+      }
+      else {
+        model.setTurn(model.getTurn() - 1);
+      }
     }
   }
 }

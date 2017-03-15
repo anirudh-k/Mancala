@@ -1,7 +1,10 @@
 package models;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import rules.GoAgainRule;
+import rules.MancalaRule;
 
 /**
  * Created by Paul on 12/9/2016.
@@ -33,27 +36,33 @@ public class TwoPlayerMancalaModel implements MancalaModel {
     this.board = new TwoPlayerBoard();
     this.turn = 0;
     this.rules = new ArrayList<>();
+    rules.addAll(Arrays.asList(new GoAgainRule()));
   }
 
 
   @Override
   public void move(Board board, int turn, Cup cup, List<MancalaRule> rules) {
     int hand;
-    if (cup.getOwningPlayer() == turn) {
+    if (cup.getOwningPlayer() == turn && !cup.isScoring()) {
       hand = cup.take();
+      while (hand > 0) {
+        Cup nextCup = board.nextCup(cup);
+        if (!nextCup.isScoring() || nextCup.getOwningPlayer() == this.turn) {
+          cup = nextCup;
+        }
+        else {
+          cup = board.nextCup(nextCup);
+        }
+        hand -= 1;
+        cup.drop(1);
+        for (MancalaRule r : rules) {
+          r.apply(this, cup, hand);
+        }
+      }
+      nextTurn();
     }
     else {
-      throw new IllegalArgumentException();
-    }
-    while (hand > 0) {
-      // TODO check if they are placing it in a scoring cup that isnt their own
-      cup = board.nextCup(cup);
-      hand -= 1;
-      cup.drop(1);
-      //TODO add rules
-      for (MancalaRule r : rules) {
-
-      }
+      throw new IllegalArgumentException("Cannot move from that cup.");
     }
   }
 
@@ -68,8 +77,24 @@ public class TwoPlayerMancalaModel implements MancalaModel {
   }
 
   @Override
+  public int nextTurn() {
+    if (this.turn == this.board.getPlayers()) {
+      this.turn = 0;
+    }
+    else {
+      this.turn += 1;
+    }
+    return this.turn;
+  }
+
+  @Override
   public int getScore(int player) {
     return this.board.getScore(player);
+  }
+
+  @Override
+  public int getPlayers() {
+    return this.board.getPlayers();
   }
 
   @Override
