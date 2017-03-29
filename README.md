@@ -1,5 +1,4 @@
 # MancalaDecision
-An algorithmic investigation into the game of mancala.
 Objectives:
 - Discover the optimal way to play many different versions of the game of Mancala. SEE: I am aware that fully optimized algorithms exist for some versions of mancala. This is not an implementation of those algorithms. This is a personal investigation to see if I can come to an optimal solution on my own. I may in the future implement the "correct" algorithms to compare with my own.
 
