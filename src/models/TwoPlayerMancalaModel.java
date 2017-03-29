@@ -41,7 +41,7 @@ public class TwoPlayerMancalaModel implements MancalaModel {
 
 
   @Override
-  public void move(Board board, int turn, Cup cup, List<MancalaRule> rules) {
+  public void sow(Board board, int turn, Cup cup, List<MancalaRule> rules) {
     int hand;
     if (cup.getOwningPlayer() == turn && !cup.isScoring()) {
       hand = cup.take();
@@ -62,7 +62,7 @@ public class TwoPlayerMancalaModel implements MancalaModel {
       nextTurn();
     }
     else {
-      throw new IllegalArgumentException("Cannot move from that cup.");
+      throw new IllegalArgumentException("Cannot sow from that cup.");
     }
   }
 
@@ -98,8 +98,17 @@ public class TwoPlayerMancalaModel implements MancalaModel {
   }
 
   @Override
-  public boolean isGameOver(Board board) {
-    return false;
+  public int getBoardLength() {
+    return this.board.getLength();
   }
 
+  @Override
+  public boolean isGameOver(Board board) {
+    for (Cup c : board.getCups()) {
+      if (!c.isScoring() && c.getStones() > 0) {
+        return false;
+      }
+    }
+    return true;
+  }
 }

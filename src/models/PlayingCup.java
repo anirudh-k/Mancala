@@ -3,7 +3,7 @@ package models;
 /**
  * Created by paul on 3/7/17.
  * To represent a playing cup. A playing cup can be moved from and does not count towards either
- * owningPlayer's score.
+ * player's score.
  */
 public class PlayingCup implements Cup {
   int stones;

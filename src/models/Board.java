@@ -9,7 +9,7 @@ import java.util.List;
 public interface Board {
 
   /**
-   * Gets the cup information about the board
+   * Gets the cup states from this board.
    * @return a {@code List<Cup>} representing this board
    */
   List<Cup> getCups();
@@ -22,7 +22,7 @@ public interface Board {
   Cup nextCup(Cup current);
 
   /**
-   * Gets the number of players this board was made for
+   * Gets the number of intended players for this board.
    * @return an integer representing the number of players
    */
   int getPlayers();
@@ -33,6 +33,13 @@ public interface Board {
    * @return an integer representing the player's score
    */
   int getScore(int player);
+
+  /**
+   * Gets the length of the board. Length is defined as the amount of cups under any one player's
+   * control
+   * @return an integer representing board length
+   */
+  int getLength();
 
   /**
    * Sets up the board

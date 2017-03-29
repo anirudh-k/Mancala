@@ -4,7 +4,8 @@ import java.util.List;
 
 /**
  * Created by paul on 3/7/17.
- * To represent a standard two owningPlayer western mancala board
+ * To represent a standard two-player western mancala board
+ * TODO move this implementation to the kalah model
  */
 public class TwoPlayerBoard implements Board {
   List<Cup> cups;
@@ -15,7 +16,7 @@ public class TwoPlayerBoard implements Board {
   /**
    * Specific constructor
    * @param stonesPerCup initial stones per cup
-   * @param sideLength number of cups per side (not including scoring cup)
+   * @param sideLength number of cups per side
    * @param players number of players
    */
   public TwoPlayerBoard (int stonesPerCup, int sideLength, int players) {
@@ -30,7 +31,7 @@ public class TwoPlayerBoard implements Board {
    */
   public TwoPlayerBoard() {
     this.stonesPerCup = 4;
-    this.sideLength = 6;
+    this.sideLength = 7;
     this.players = 2;
     init();
   }
@@ -73,9 +74,14 @@ public class TwoPlayerBoard implements Board {
   }
 
   @Override
+  public int getLength() {
+    return this.sideLength;
+  }
+
+  @Override
   public void init() {
     for (int i = 0; i < this.players; i += 1) {
-      for (int j = 0; j < this.sideLength; j += 1) {
+      for (int j = 0; j < this.sideLength - 1; j += 1) {
         cups.add(new PlayingCup(this.stonesPerCup, i));
       }
       cups.add(new ScoreCup(i));

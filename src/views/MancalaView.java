@@ -7,7 +7,7 @@ package views;
 public interface MancalaView {
 
   /**
-   * Displays the view
+   * Displays a view for a mancala game
    */
   void display();
 }

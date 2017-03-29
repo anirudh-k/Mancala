@@ -10,14 +10,14 @@ import models.MancalaModel;
  * Hand: pieces in the players hand
  * Rules are a set of cup and hand interactions
  *  ex: hand is not empty, drop one stone in cup
- *      cup is empty, hand has one stone, move ends
+ *      cup is empty, hand has one stone, sow ends
  */
 public interface MancalaRule {
 
   /**
-   * Applies this rule to a cup in a move and the current hand. By convention, rules should be
+   * Applies this rule to a cup in a sow and the current hand. By convention, rules should be
    * applied after the hand has dealt a stone into the given cup.
-   * @param model the model in which the move is made
+   * @param model the model in which the sow is made
    * @param cup   the cup having the rule applied
    * @param hand  the current hand after placing a stone into the cup
    */
