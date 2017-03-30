@@ -29,12 +29,20 @@ public interface MancalaModel {
    */
   Cup[][] getCups();
 
+  /**
+   * Gets the number of stones in the given player's hand
+   * @param isFirstPlayer
+   * @return
+   */
+  int getHand(boolean isFirstPlayer);
+
 
   /**
    * Executes a move in the game according to the given list of rules (called sowing)
-   * @param cup   the cup to sow from
+   * @param cup               the cup to sow from
+   * @param isFirstPlayerTurn player sowing
    */
-  void sow(Cup cup);
+  void sow(Cup cup, boolean isFirstPlayerTurn);
 
   /**
    * If it is the turn of the player who moved first, true, false otherwise
@@ -44,10 +52,9 @@ public interface MancalaModel {
 
   /**
    * toggles the turn
-   * @param turn
    * @return
    */
-  boolean toggleTurn(int turn);
+  boolean toggleTurn();
 
   /**
    * Gets the score of the
@@ -59,13 +66,13 @@ public interface MancalaModel {
   /**
    * Gets the length of the board. Length is defined as the amount of cups under any one player's
    * control
-   * @return an integer representing board length
+   * @return
    */
   int getBoardLength();
 
   /**
-   * Checks if the game is over
-   * @return true if the game is over, false otherwise
+   * Checks if the game is over. True if the game is over, false otherwise
+   * @return
    */
   boolean isGameOver();
 
