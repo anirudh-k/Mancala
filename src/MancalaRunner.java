@@ -1,7 +1,6 @@
 import controllers.MancalaController;
 import controllers.SimpleMancalaController;
 import models.MancalaModel;
-import models.TwoPlayerMancalaModel;
 import views.MancalaConsoleView;
 import views.MancalaView;
 

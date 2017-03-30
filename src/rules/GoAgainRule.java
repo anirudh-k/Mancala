@@ -12,7 +12,7 @@ public class GoAgainRule implements MancalaRule {
 
   @Override
   public void apply(MancalaModel model, Cup cup, int hand) {
-    if (hand == 0 && cup.getOwningPlayer() == model.getTurn() && cup.isScoring()) {
+    if (hand == 0 && cup.isOwnedByFirstPlayer() == model.getTurn() && cup.isScoring()) {
       if (model.getTurn() == 0) {
         model.setTurn(model.getPlayers());
       }

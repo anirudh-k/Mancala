@@ -7,15 +7,15 @@ package models;
  */
 public class PlayingCup implements Cup {
   int stones;
-  int owningPlayer;
+  boolean isOwnedByFirstPlayer;
 
-  public PlayingCup(int stones, int owningPlayer) {
+  public PlayingCup(int stones, boolean isOwnedByFirstPlayer) {
     this.stones = stones;
-    this.owningPlayer = owningPlayer;
+    this.isOwnedByFirstPlayer = isOwnedByFirstPlayer;
   }
 
-  public int getOwningPlayer() {
-    return this.owningPlayer;
+  public boolean isOwnedByFirstPlayer() {
+    return isOwnedByFirstPlayer;
   }
 
   @Override

@@ -6,15 +6,15 @@ package models;
  */
 public class ScoreCup implements Cup {
   int stones;
-  int owningPlayer;
+  boolean isOwnedByFirstPlayer;
 
-  public ScoreCup(int owningPlayer) {
+  public ScoreCup(boolean isOwnedByFirstPlayer) {
     this.stones = 0;
-    this.owningPlayer = owningPlayer;
+    this.isOwnedByFirstPlayer = isOwnedByFirstPlayer;
   }
 
-  public int getOwningPlayer() {
-    return this.owningPlayer;
+  public boolean isOwnedByFirstPlayer() {
+    return this.isOwnedByFirstPlayer
   }
 
   @Override

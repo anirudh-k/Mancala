@@ -7,10 +7,10 @@ package models;
 public interface Cup {
 
   /**
-   * Gets the owningPlayer who owns this cup
-   * @return an integer representing owning owningPlayer
+   * true if this cup is owned by the first player, false otherwise
+   * @return
    */
-  int getOwningPlayer();
+  boolean isOwnedByFirstPlayer();
 
   /**
    * Gets the number of mancala stones in this cup

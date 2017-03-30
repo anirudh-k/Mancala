@@ -6,6 +6,11 @@ import rules.MancalaRule;
 /**
  * Created by Paul on 12/9/2016.
  * TODO make sure model is in line with new information and refactored design - bao, oware, kalah
+ * PROGRESS:
+ * 3/29: removed unneeded methods getPlayers, nextTurn
+ *       Board interface subsumed by model because board representation of state will not be
+ *       relevant outside its corresponding model implementation
+ *
  * To represent a game of mancala.
  * Mancala has rules defined by the following (from https://en.wikipedia.org/wiki/Mancala):
  *
@@ -19,44 +24,37 @@ import rules.MancalaRule;
 public interface MancalaModel {
 
   /**
+   * Gets the cup states from this model.
+   * @return a {@code List<Cup>} representing this board
+   */
+  Cup[][] getCups();
+
+
+  /**
    * Executes a move in the game according to the given list of rules (called sowing)
-   * @param board the current board configuration
-   * @param turn  which players turn it is
    * @param cup   the cup to sow from
-   * @param rules the rules to apply to the sow
    */
-  void sow(Board board, int turn, Cup cup, List<MancalaRule> rules);
+  void sow(Cup cup);
 
   /**
-   * Gets which owningPlayer's turn it is.
-   * @return 1 if it is owningPlayer 1's turn, 2 for owningPlayer 2, etc.
+   * If it is the turn of the player who moved first, true, false otherwise
+   * @return
    */
-  int getTurn();
+  boolean isFirstPlayerTurn();
 
   /**
-   * Sets turn to the given integer
-   * @param turn set turn to this value
+   * toggles the turn
+   * @param turn
+   * @return
    */
-  void setTurn(int turn);
+  boolean toggleTurn(int turn);
 
   /**
-   * EFFECT: Advances to the next players turn
-   * @return an integer representing the player whose turn it is
+   * Gets the score of the
+   * @param firstPlayer the first player to sow in the game
+   * @return an integer representing the given player's score ()
    */
-  int nextTurn();
-
-  /**
-   * Gets the given players's score
-   * @param player the given owningPlayer (1 for player 1, 2 for player 2 etc.)
-   * @return an integer representing the given player's score
-   */
-  int getScore(int player);
-
-  /**
-   * Gets the number of players in the game
-   * @return an integer representing the number of players in the game
-   */
-  int getPlayers();
+  int getScore(boolean firstPlayer);
 
   /**
    * Gets the length of the board. Length is defined as the amount of cups under any one player's
@@ -66,9 +64,13 @@ public interface MancalaModel {
   int getBoardLength();
 
   /**
-   * A game is over if there are no mancala pieces left on the board, i.e. every piece is in a
-   * {@code ScoreCup}.
+   * Checks if the game is over
    * @return true if the game is over, false otherwise
    */
-  boolean isGameOver(Board board);
+  boolean isGameOver();
+
+  /**
+   * Sets up the board
+   */
+  void init();
 }

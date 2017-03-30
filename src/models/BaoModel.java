@@ -1,7 +1,6 @@
-package models.bao;
+package models;
 
 import java.util.List;
-import models.Board;
 import models.Cup;
 import models.MancalaModel;
 import rules.MancalaRule;
@@ -14,32 +13,27 @@ import rules.MancalaRule;
 public class BaoModel implements MancalaModel {
 
   @Override
-  public void sow(Board board, int turn, Cup cup, List<MancalaRule> rules) {
+  public Cup[][] getCups() {
+    return new Cup[0][];
+  }
+
+  @Override
+  public void sow(Cup cup) {
 
   }
 
   @Override
-  public int getTurn() {
-    return 0;
+  public boolean isFirstPlayerTurn() {
+    return false;
   }
 
   @Override
-  public void setTurn(int turn) {
-
+  public boolean toggleTurn(int turn) {
+    return false;
   }
 
   @Override
-  public int nextTurn() {
-    return 0;
-  }
-
-  @Override
-  public int getScore(int player) {
-    return 0;
-  }
-
-  @Override
-  public int getPlayers() {
+  public int getScore(boolean firstPlayer) {
     return 0;
   }
 
@@ -49,7 +43,13 @@ public class BaoModel implements MancalaModel {
   }
 
   @Override
-  public boolean isGameOver(Board board) {
+  public boolean isGameOver() {
     return false;
   }
+
+  @Override
+  public void init() {
+
+  }
+
 }
