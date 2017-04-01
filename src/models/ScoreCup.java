@@ -14,7 +14,7 @@ public class ScoreCup implements Cup {
   }
 
   public boolean isOwnedByFirstPlayer() {
-    return this.isOwnedByFirstPlayer
+    return this.isOwnedByFirstPlayer;
   }
 
   @Override

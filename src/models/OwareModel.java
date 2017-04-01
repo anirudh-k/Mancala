@@ -19,7 +19,12 @@ public class OwareModel implements MancalaModel {
   }
 
   @Override
-  public void sow(Cup cup) {
+  public int getHand(boolean isFirstPlayer) {
+    return 0;
+  }
+
+  @Override
+  public void sow(int cupNum, boolean isFirstPlayerTurn) {
 
   }
 
@@ -29,7 +34,7 @@ public class OwareModel implements MancalaModel {
   }
 
   @Override
-  public boolean toggleTurn(int turn) {
+  public boolean toggleTurn() {
     return false;
   }
 

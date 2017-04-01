@@ -39,10 +39,10 @@ public interface MancalaModel {
 
   /**
    * Executes a move in the game according to the given list of rules (called sowing)
-   * @param cup               the cup to sow from
+   * @param cupNum            the cup to sow from
    * @param isFirstPlayerTurn player sowing
    */
-  void sow(Cup cup, boolean isFirstPlayerTurn);
+  void sow(int cupNum, boolean isFirstPlayerTurn);
 
   /**
    * If it is the turn of the player who moved first, true, false otherwise

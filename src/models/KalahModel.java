@@ -86,18 +86,38 @@ public class KalahModel implements MancalaModel{
   }
 
   @Override
-  public void sow(Cup cup, boolean isFirstPlayerTurn) {
+  public void sow(int cupNum, boolean isFirstPlayerTurn) {
+    int hand = 0;
+    Cup cup;
+    int side;
     //TODO
-    if (this.isFirstPlayerTurn && cup.isOwnedByFirstPlayer()){
+    if (this.isFirstPlayerTurn){
+      cup = board[0][cupNum];
       this.firstPlayerHand = cup.take();
+      hand = this.firstPlayerHand;
+      side = 0;
     }
-    else if (!this.isFirstPlayerTurn && !cup.isOwnedByFirstPlayer()) {
+    else if (!this.isFirstPlayerTurn) {
+      cup = board[1][cupNum];
       this.secondPlayerHand = cup.take();
+      hand = this.secondPlayerHand;
+      side = 1;
     }
     else {
       throw new IllegalArgumentException("Player must own the cup sowed from.");
     }
 
+    int count = cupNum;
+    while (hand > 0) {
+      if (count == board[0].length - 1) {
+        count = 0;
+        //todo side switch
+      }
+      else {
+        //todo normal drop
+      }
+      hand -= 1;
+    }
   }
 
   @Override

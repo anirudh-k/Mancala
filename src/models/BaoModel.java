@@ -18,9 +18,15 @@ public class BaoModel implements MancalaModel {
   }
 
   @Override
-  public void sow(Cup cup) {
+  public int getHand(boolean isFirstPlayer) {
+    return 0;
+  }
+
+  @Override
+  public void sow(int cupNum, boolean isFirstPlayerTurn) {
 
   }
+
 
   @Override
   public boolean isFirstPlayerTurn() {
@@ -28,7 +34,7 @@ public class BaoModel implements MancalaModel {
   }
 
   @Override
-  public boolean toggleTurn(int turn) {
+  public boolean toggleTurn() {
     return false;
   }
 

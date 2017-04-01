@@ -39,6 +39,7 @@ public class KalahController implements MancalaController {
 
   @Override
   public void go() {
-
+    model.init();
+    view.display();
   }
 }
