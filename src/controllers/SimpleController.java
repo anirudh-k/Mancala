@@ -5,14 +5,14 @@ import views.MancalaView;
 
 /**
  * Created by paul on 3/8/17.
- * To represent a mancala controller. Handles user input and defines game sequence and AI strategy.
+ * To represent a mancala controller. Handles user input and defines game sequence
  */
-public class KalahController implements MancalaController {
+public class SimpleController implements MancalaController {
 
   MancalaModel model;
   MancalaView view;
 
-  public KalahController(MancalaModel model, MancalaView view) {
+  public SimpleController(MancalaModel model, MancalaView view) {
     this.model = model;
     this.view = view;
   }
@@ -32,10 +32,6 @@ public class KalahController implements MancalaController {
    *
    * Source: https://en.wikipedia.org/wiki/Pie_rule, 3/29/2017
    */
-
-  private void pieRule() {
-    //TODO
-  }
 
   @Override
   public void go() {

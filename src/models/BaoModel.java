@@ -23,7 +23,7 @@ public class BaoModel implements MancalaModel {
   }
 
   @Override
-  public void sow(int cupNum, boolean isFirstPlayerTurn) {
+  public void sow(int cupNum) {
 
   }
 

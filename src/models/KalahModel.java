@@ -28,7 +28,6 @@ import rules.MancalaRule;
  *   moves all remaining seeds to their store, and the player with the most seeds in their store
  *   wins.
  * - It is possible for the game to end in a draw.
- * TODO
  */
 public class KalahModel implements MancalaModel{
   private Cup[][] board;
@@ -86,38 +85,45 @@ public class KalahModel implements MancalaModel{
   }
 
   @Override
-  public void sow(int cupNum, boolean isFirstPlayerTurn) {
-    int hand = 0;
-    Cup cup;
+  public void sow(int cupNum) {
     int side;
-    //TODO
     if (this.isFirstPlayerTurn){
-      cup = board[0][cupNum];
-      this.firstPlayerHand = cup.take();
-      hand = this.firstPlayerHand;
       side = 0;
     }
-    else if (!this.isFirstPlayerTurn) {
-      cup = board[1][cupNum];
-      this.secondPlayerHand = cup.take();
-      hand = this.secondPlayerHand;
+    else {
       side = 1;
     }
-    else {
-      throw new IllegalArgumentException("Player must own the cup sowed from.");
-    }
 
+    Cup cup = board[side][cupNum];
+    int hand = cup.take();
     int count = cupNum;
     while (hand > 0) {
-      if (count == board[0].length - 1) {
+      //wrapping
+      if (count == board[side].length - 1) {
         count = 0;
-        //todo side switch
+        if (side == 1) {
+          side = 0;
+        }
+        else {
+          side = 1;
+        }
       }
       else {
-        //todo normal drop
+        count += 1;
       }
-      hand -= 1;
+
+      Cup next = board[side][count];
+      if (!next.isScoring() || next.isOwnedByFirstPlayer() == this.isFirstPlayerTurn) {
+        // go again if last stone lands in your scoring cup
+        if (hand == 1 && next.isScoring()) {
+          toggleTurn();
+        }
+        next.drop(1);
+        hand -= 1;
+      }
     }
+
+    toggleTurn();
   }
 
   @Override
@@ -148,14 +154,8 @@ public class KalahModel implements MancalaModel{
 
   @Override
   public boolean isGameOver() {
-    for (int i = 0; i < 2; i += 1) {
-      for (int j = 0; j < 6; j += 1) { // only 6 because scoring cups shouldnt be counted
-        if (board[i][j].getStones() != 0) {
-          return false;
-        }
-      }
-    }
-    return true;
+    int stonesToWin = this.stonesPerCup * 6 + 1;
+    return board[0][7].getStones() == stonesToWin || board[1][7].getStones() == stonesToWin;
   }
 
   @Override
