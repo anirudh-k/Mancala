@@ -1,7 +1,13 @@
 package views;
 
 import controllers.MancalaController;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.io.Writer;
+import java.util.Scanner;
 
 /**
  * Created by paul on 3/8/17.
@@ -16,8 +22,18 @@ public class MancalaConsoleView implements MancalaView {
     this.a = a;
   }
 
+  public MancalaConsoleView() {
+    this.r = new BufferedReader(new InputStreamReader(System.in));
+    this.a = new OutputStreamWriter(System.out);
+  }
+
   @Override
   public void display() {
-    System.out.println("Welcome to Mancala!");
+    try {
+      a.append("Welcome to Mancala");
+
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
   }
 }

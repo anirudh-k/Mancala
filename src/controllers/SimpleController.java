@@ -17,7 +17,13 @@ public class SimpleController implements MancalaController {
     this.view = view;
   }
 
+  /**
+   * To set up key input for a view
+   * TODO how am i going to do this for a console view
+   */
+  private void configureKeyboardInput() {
 
+  }
   /**
    * The pie rule, sometimes referred to as the swap rule, is a rule used to balance abstract
    * strategy games where a first-move advantage has been demonstrated. After the first move is made
