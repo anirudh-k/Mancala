@@ -1,13 +1,10 @@
 package views;
 
-import controllers.MancalaController;
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.io.Writer;
-import java.util.Scanner;
+import models.Cup;
 
 /**
  * Created by paul on 3/8/17.
@@ -28,12 +25,50 @@ public class MancalaConsoleView implements MancalaView {
   }
 
   @Override
-  public void display() {
+  public void drawBoard(Cup[][] board) {
     try {
-      a.append("Welcome to Mancala");
+      printLine(board[0].length);
+      for (int i = 0; i < board.length; i += 1) {
+        a.append("|");
+        for (int j = 0; j < board[0].length; j += 1) {
+          if (!board[i][j].isScoring()) {
+            a.append(board[i][j].getStones() + "|");
+          }
+          else {
+            a.append(" " + board[i][j].getStones() + " |");
+          }
+        }
+        printLine(board[0].length);
+      }
+      a.append("\n");
 
     } catch (IOException e) {
       e.printStackTrace();
     }
   }
+
+  /**
+   * Prints a line of the board
+   * @param length
+   */
+  private void printLine(int length) {
+    try {
+      for (int j = 0; j < length; j += 1) {
+        a.append("---");
+      }
+      a.append("\n");
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+
+  @Override
+  public void getIntro() {
+    try {
+      a.append("Welcome to Mancala!");
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+
 }

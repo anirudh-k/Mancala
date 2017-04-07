@@ -1,5 +1,6 @@
 import controllers.MancalaController;
-import controllers.KalahController;
+import controllers.SimpleController;
+import models.KalahModel;
 import models.MancalaModel;
 import views.MancalaConsoleView;
 import views.MancalaView;
@@ -10,9 +11,9 @@ import views.MancalaView;
  */
 public class MancalaRunner {
   public static void main(String[] args) {
-    MancalaModel model = new TwoPlayerMancalaModel();
+    MancalaModel model = new KalahModel();
     MancalaView view = new MancalaConsoleView();
-    MancalaController controller = new KalahController(model, view);
+    MancalaController controller = new SimpleController(model, view);
     controller.go();
   }
 }

@@ -10,6 +10,6 @@ public class RandomStrategy implements StrategyAlgorithm {
 
   @Override
   public int bestMove(MancalaModel model) {
-    return (int) (Math.round(Math.random() * model.getBoardLength()) * model.getTurn());
+    return (int) (Math.round(Math.random() * model.getBoardLength()));
   }
 }

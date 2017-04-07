@@ -42,6 +42,7 @@ public class SimpleController implements MancalaController {
   @Override
   public void go() {
     model.init();
-    view.display();
+    view.getIntro();
+    view.drawBoard(model.getCups());
   }
 }

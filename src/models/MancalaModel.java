@@ -1,8 +1,5 @@
 package models;
 
-import java.util.List;
-import rules.MancalaRule;
-
 /**
  * Created by Paul on 12/9/2016.
  * TODO make sure model is in line with new information and refactored design - bao, oware, kalah

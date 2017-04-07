@@ -1,10 +1,5 @@
 package models;
 
-import java.util.List;
-import models.Cup;
-import models.MancalaModel;
-import rules.MancalaRule;
-
 /**
  * Created by paul on 3/28/17.
  * To represent a Kalah mancala model, the rules for which are as follows:
