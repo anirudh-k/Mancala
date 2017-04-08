@@ -16,5 +16,11 @@ public interface MancalaView {
   /**
    * Displays welcome information for Mancala
    */
-  void getIntro();
+  void showIntro();
+
+  /**
+   * Waits for user input
+   */
+  String getInput(boolean fromFirstPlayer);
+
 }

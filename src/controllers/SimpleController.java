@@ -18,13 +18,6 @@ public class SimpleController implements MancalaController {
   }
 
   /**
-   * To set up key input for a view
-   * TODO how am i going to do this for a console view
-   */
-  private void configureKeyboardInput() {
-
-  }
-  /**
    * The pie rule, sometimes referred to as the swap rule, is a rule used to balance abstract
    * strategy games where a first-move advantage has been demonstrated. After the first move is made
    * in a game that uses the pie rule, the second player has one of two options:
@@ -42,7 +35,21 @@ public class SimpleController implements MancalaController {
   @Override
   public void go() {
     model.init();
-    view.getIntro();
-    view.drawBoard(model.getCups());
+    view.showIntro();
+    while (!model.isGameOver()) {
+      view.drawBoard(model.getCups());
+      String in = view.getInput(model.isFirstPlayerTurn());
+      model.sow(getCupNum(in));
+      model.toggleTurn();
+    }
+  }
+
+  /**
+   * Gets the cup to move from
+   * @param input user input
+   * @return integer representing cup to move from
+   */
+  private int getCupNum(String input) {
+    return Integer.getInteger(input) - 1;
   }
 }

@@ -4,6 +4,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.nio.CharBuffer;
+import java.util.Scanner;
+
 import models.Cup;
 
 /**
@@ -21,15 +24,21 @@ public class MancalaConsoleView implements MancalaView {
 
   public MancalaConsoleView() {
     this.r = new BufferedReader(new InputStreamReader(System.in));
-    this.a = new OutputStreamWriter(System.out);
+    this.a = System.out;
   }
 
   @Override
   public void drawBoard(Cup[][] board) {
     try {
       printLine(board[0].length);
+      a.append("|Cup Number |");
+      for (int i = 0; i < board[0].length - 1; i += 1) {
+        a.append(i + 1 + "|");
+      }
+      a.append(" " + board[0].length + " |");
+      printLine(board[0].length);
       for (int i = 0; i < board.length; i += 1) {
-        a.append("|");
+        a.append("|Player " + (i + 1) + "   |");
         for (int j = 0; j < board[0].length; j += 1) {
           if (!board[i][j].isScoring()) {
             a.append(board[i][j].getStones() + "|");
@@ -53,22 +62,42 @@ public class MancalaConsoleView implements MancalaView {
    */
   private void printLine(int length) {
     try {
+      a.append("\n-------------");
       for (int j = 0; j < length; j += 1) {
-        a.append("---");
+        a.append("--");
       }
-      a.append("\n");
+      a.append("--\n");
     } catch (IOException e) {
       e.printStackTrace();
     }
   }
 
   @Override
-  public void getIntro() {
+  public void showIntro() {
     try {
-      a.append("Welcome to Mancala!");
+      a.append("Welcome to Mancala!\n");
     } catch (IOException e) {
       e.printStackTrace();
     }
   }
 
+  @Override
+  public String getInput(boolean fromFirstPlayer) {
+    Scanner s;
+    CharBuffer c = CharBuffer.wrap("");
+    try {
+      if (fromFirstPlayer) {
+        a.append("Player 1 move: \n");
+      }
+      else {
+        a.append("Player 2 move: \n");
+      }
+      s = new Scanner(System.in);
+      c = CharBuffer.wrap(s.next());
+      r.read(c);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    return c.toString();
+  }
 }

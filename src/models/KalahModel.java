@@ -1,5 +1,7 @@
 package models;
 
+import java.util.IllegalFormatCodePointException;
+
 /**
  * Created by paul on 3/28/17.
  * To represent a Kalah mancala model, the rules for which are as follows:
@@ -29,8 +31,6 @@ public class KalahModel implements MancalaModel{
   private boolean isFirstPlayerTurn;
   private boolean pieRule;
   private int stonesPerCup;
-  private int firstPlayerHand;
-  private int secondPlayerHand;
 
   /**
    * Default constructor
@@ -81,6 +81,9 @@ public class KalahModel implements MancalaModel{
 
   @Override
   public void sow(int cupNum) {
+    if (cupNum < 0 || cupNum > board[0].length) {
+      throw new IllegalArgumentException("Cup " + cupNum + "out of range.");
+    }
     int side;
     if (this.isFirstPlayerTurn){
       side = 0;
@@ -150,7 +153,7 @@ public class KalahModel implements MancalaModel{
   @Override
   public boolean isGameOver() {
     int stonesToWin = this.stonesPerCup * 6 + 1;
-    return board[0][7].getStones() == stonesToWin || board[1][7].getStones() == stonesToWin;
+    return board[0][6].getStones() == stonesToWin || board[1][6].getStones() == stonesToWin;
   }
 
   @Override
@@ -167,7 +170,5 @@ public class KalahModel implements MancalaModel{
         }
       }
     }
-    this.firstPlayerHand = 0;
-    this.secondPlayerHand = 0;
   }
 }

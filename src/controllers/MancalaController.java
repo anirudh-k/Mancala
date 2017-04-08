@@ -10,4 +10,5 @@ public interface MancalaController {
    * Starts the Mancala controller
    */
   void go();
+
 }
