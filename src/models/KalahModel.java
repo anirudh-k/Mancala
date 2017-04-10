@@ -80,7 +80,7 @@ public class KalahModel implements MancalaModel{
   }
 
   @Override
-  public void sow(int cupNum) {
+  public void sow(int cupNum) throws IllegalArgumentException {
     if (cupNum < 0 || cupNum > board[0].length) {
       throw new IllegalArgumentException("Cup " + cupNum + "out of range.");
     }
@@ -120,8 +120,6 @@ public class KalahModel implements MancalaModel{
         hand -= 1;
       }
     }
-
-    toggleTurn();
   }
 
   @Override

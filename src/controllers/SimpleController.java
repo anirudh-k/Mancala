@@ -12,6 +12,11 @@ public class SimpleController implements MancalaController {
   MancalaModel model;
   MancalaView view;
 
+  /**
+   * Constructor
+   * @param model
+   * @param view
+   */
   public SimpleController(MancalaModel model, MancalaView view) {
     this.model = model;
     this.view = view;
@@ -31,7 +36,6 @@ public class SimpleController implements MancalaController {
    *
    * Source: https://en.wikipedia.org/wiki/Pie_rule, 3/29/2017
    */
-
   @Override
   public void go() {
     model.init();
@@ -39,8 +43,12 @@ public class SimpleController implements MancalaController {
     while (!model.isGameOver()) {
       view.drawBoard(model.getCups());
       String in = view.getInput(model.isFirstPlayerTurn());
-      model.sow(getCupNum(in));
-      model.toggleTurn();
+      try {
+        model.sow(getCupNum(in) - 1);
+        model.toggleTurn();
+      } catch (IllegalArgumentException e) {
+
+      }
     }
   }
 
@@ -50,6 +58,12 @@ public class SimpleController implements MancalaController {
    * @return integer representing cup to move from
    */
   private int getCupNum(String input) {
-    return Integer.getInteger(input) - 1;
+    int num = 0;
+    for (int i = 0; i < input.length(); i += 1) {
+      if (Character.isDigit(input.charAt(i))) {
+        num = num + (int) Math.pow(Character.getNumericValue(input.charAt(i)), i + 1);
+      }
+    }
+    return num;
   }
 }

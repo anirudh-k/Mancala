@@ -83,8 +83,8 @@ public class MancalaConsoleView implements MancalaView {
 
   @Override
   public String getInput(boolean fromFirstPlayer) {
-    Scanner s;
-    CharBuffer c = CharBuffer.wrap("");
+    Scanner s = new Scanner(r);
+
     try {
       if (fromFirstPlayer) {
         a.append("Player 1 move: \n");
@@ -92,12 +92,10 @@ public class MancalaConsoleView implements MancalaView {
       else {
         a.append("Player 2 move: \n");
       }
-      s = new Scanner(System.in);
-      c = CharBuffer.wrap(s.next());
-      r.read(c);
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
-    return c.toString();
+      return s.next();
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+    return "";
   }
 }
