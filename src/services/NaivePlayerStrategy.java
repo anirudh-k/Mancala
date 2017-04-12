@@ -11,10 +11,10 @@ import models.MancalaModel;
  * sow from farthest left cup owned by the moving player
  * accumulate score
  */
-public class NaiveStrategy implements StrategyAlgorithm {
+public class NaivePlayerStrategy implements PlayerStrategy {
 
   @Override
-  public int bestMove(MancalaModel model) {
+  public int getMove(MancalaModel model) {
     // TODO
 
     return 0;

@@ -8,14 +8,14 @@ import models.MancalaModel;
  * maximize the ratio: score increase/opponents score potential
  * score potential is defined as the number of pieces the opponent has under their control
  */
-public class MinMaxStrategy implements StrategyAlgorithm {
+public class MinMaxPlayerStrategy implements PlayerStrategy {
 
-  public MinMaxStrategy() {
+  public MinMaxPlayerStrategy() {
 
   }
 
   @Override
-  public int bestMove(MancalaModel model) {
+  public int getMove(MancalaModel model) {
     //TODO
     return 0;
   }

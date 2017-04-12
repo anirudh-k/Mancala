@@ -19,8 +19,8 @@ public interface MancalaView {
   void showIntro();
 
   /**
-   * Waits for user input
+   * Prompts user for input
    */
-  String getInput(boolean fromFirstPlayer);
+  void getInput(boolean fromFirstPlayer);
 
 }

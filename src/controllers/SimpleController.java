@@ -1,6 +1,9 @@
 package controllers;
 
 import models.MancalaModel;
+import services.ConsoleListener;
+import services.HumanPlayerStrategy;
+import services.PlayerStrategy;
 import views.MancalaView;
 
 /**
@@ -11,6 +14,8 @@ public class SimpleController implements MancalaController {
 
   MancalaModel model;
   MancalaView view;
+  PlayerStrategy p1;
+  PlayerStrategy p2;
 
   /**
    * Constructor
@@ -20,6 +25,21 @@ public class SimpleController implements MancalaController {
   public SimpleController(MancalaModel model, MancalaView view) {
     this.model = model;
     this.view = view;
+    this.p1 = new HumanPlayerStrategy(this.view, new ConsoleListener());
+    this.p2 = new HumanPlayerStrategy(this.view, new ConsoleListener());
+  }
+
+  /**
+   * Constructor
+   * @param model
+   * @param view
+   */
+  public SimpleController(MancalaModel model, MancalaView view,
+      PlayerStrategy p1, PlayerStrategy p2) {
+    this.model = model;
+    this.view = view;
+    this.p1 = p1;
+    this.p2 = p2;
   }
 
   /**
@@ -41,10 +61,18 @@ public class SimpleController implements MancalaController {
     model.init();
     view.showIntro();
     while (!model.isGameOver()) {
+      boolean ifpt = model.isFirstPlayerTurn();
       view.drawBoard(model.getCups());
-      String in = view.getInput(model.isFirstPlayerTurn());
+      view.getInput(ifpt);
+      int cupNum;
+      if (ifpt) {
+        cupNum = p1.getMove(this.model);
+      }
+      else {
+        cupNum = p2.getMove(this.model);
+      }
       try {
-        model.sow(getCupNum(in) - 1);
+        model.sow(cupNum - 1);
         model.toggleTurn();
       } catch (IllegalArgumentException e) {
 
@@ -52,18 +80,4 @@ public class SimpleController implements MancalaController {
     }
   }
 
-  /**
-   * Gets the cup to move from
-   * @param input user input
-   * @return integer representing cup to move from
-   */
-  private int getCupNum(String input) {
-    int num = 0;
-    for (int i = 0; i < input.length(); i += 1) {
-      if (Character.isDigit(input.charAt(i))) {
-        num = num + (int) Math.pow(Character.getNumericValue(input.charAt(i)), i + 1);
-      }
-    }
-    return num;
-  }
 }

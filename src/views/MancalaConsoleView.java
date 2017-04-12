@@ -14,16 +14,13 @@ import models.Cup;
  * To represent a console view implementation of Mancala
  */
 public class MancalaConsoleView implements MancalaView {
-  Readable r;
   Appendable a;
 
-  public MancalaConsoleView (Readable r, Appendable a) {
-    this.r = r;
+  public MancalaConsoleView (Appendable a) {
     this.a = a;
   }
 
-  public MancalaConsoleView() {
-    this.r = new BufferedReader(new InputStreamReader(System.in));
+  public MancalaConsoleView () {
     this.a = System.out;
   }
 
@@ -82,9 +79,7 @@ public class MancalaConsoleView implements MancalaView {
   }
 
   @Override
-  public String getInput(boolean fromFirstPlayer) {
-    Scanner s = new Scanner(r);
-
+  public void getInput(boolean fromFirstPlayer) {
     try {
       if (fromFirstPlayer) {
         a.append("Player 1 move: \n");
@@ -92,10 +87,8 @@ public class MancalaConsoleView implements MancalaView {
       else {
         a.append("Player 2 move: \n");
       }
-      return s.next();
       } catch (IOException e) {
         e.printStackTrace();
       }
-    return "";
   }
 }
