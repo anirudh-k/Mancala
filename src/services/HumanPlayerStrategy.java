@@ -10,11 +10,9 @@ import views.MancalaView;
  * To represent a human player of mancala
  */
 public class HumanPlayerStrategy implements PlayerStrategy {
-  MancalaView view;
   InputListener listener;
 
-  public HumanPlayerStrategy(MancalaView view, InputListener listener) {
-    this.view = view;
+  public HumanPlayerStrategy(InputListener listener) {
     this.listener = listener;
   }
 

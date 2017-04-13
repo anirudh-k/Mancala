@@ -2,6 +2,9 @@ import controllers.MancalaController;
 import controllers.SimpleController;
 import models.KalahModel;
 import models.MancalaModel;
+import services.ConsoleListener;
+import services.HumanPlayerStrategy;
+import services.PlayerStrategy;
 import views.MancalaConsoleView;
 import views.MancalaView;
 
@@ -11,9 +14,11 @@ import views.MancalaView;
  */
 public class MancalaRunner {
   public static void main(String[] args) {
+    PlayerStrategy p1 = new HumanPlayerStrategy(new ConsoleListener());
+    PlayerStrategy p2 = new HumanPlayerStrategy(new ConsoleListener());
     MancalaModel model = new KalahModel();
     MancalaView view = new MancalaConsoleView();
-    MancalaController controller = new SimpleController(model, view);
+    MancalaController controller = new SimpleController(model, view, p1, p2);
     controller.go();
   }
 }
