@@ -34,11 +34,6 @@ public class OwareModel implements MancalaModel {
   }
 
   @Override
-  public int getScore(boolean firstPlayer) {
-    return 0;
-  }
-
-  @Override
   public int getBoardLength() {
     return 0;
   }

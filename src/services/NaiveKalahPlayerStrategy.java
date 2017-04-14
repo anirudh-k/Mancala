@@ -1,5 +1,6 @@
 package services;
 
+import models.Cup;
 import models.KalahModel;
 import models.MancalaModel;
 
@@ -16,12 +17,30 @@ public class NaiveKalahPlayerStrategy implements PlayerStrategy {
 
   @Override
   public int getMove(MancalaModel model) {
+    Cup[][] cups = model.getCups();
+    int side;
+    if (model.isFirstPlayerTurn()) {
+      side = 0;
+    }
+    else {
+      side = 1;
+    }
     // TODO s[i][j] represents the score increase sowing from cup number i
     // containing j stones (consider go again rule which makes precomputation impossible)
-    int[][] s = new int[model.getBoardLength()][];
+    int[][] s = new int[model.getBoardLength()][36]; //TODO placeholder number
     int cupNum = -1;
-    for (int i = 0; i < model.getBoardLength(); i += 1) {
-      //int best = 0;
+    for (int i = 0; i < model.getBoardLength() - 1; i += 1) {
+      int stones = cups[side][i].getStones();
+      if (stones == model.getBoardLength() - (i + 1)) {
+        s[i][stones] += 1;
+        // recurse or some shit
+      }
+      else if (stones > model.getBoardLength() - (i + 1)) {
+        s[i][stones] += 1;
+      }
+      else {
+
+      }
     }
     return cupNum;
   }

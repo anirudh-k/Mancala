@@ -133,7 +133,11 @@ public class KalahModel implements MancalaModel{
     return this.isFirstPlayerTurn;
   }
 
-  @Override
+  /**
+   * Gets the score of the
+   * @param firstPlayer the first player to sow in the game
+   * @return an integer representing the given player's score ()
+   */
   public int getScore(boolean firstPlayer) {
     if (firstPlayer) {
       return board[0][6].getStones();

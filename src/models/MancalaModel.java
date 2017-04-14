@@ -52,12 +52,6 @@ public interface MancalaModel {
    */
   boolean toggleTurn();
 
-  /**
-   * Gets the score of the
-   * @param firstPlayer the first player to sow in the game
-   * @return an integer representing the given player's score ()
-   */
-  int getScore(boolean firstPlayer);
 
   /**
    * Gets the length of the board. Length is defined as the amount of cups under any one player's

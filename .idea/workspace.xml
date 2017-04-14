@@ -2,16 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff646c98-61a8-4dee-b316-7618c8643205" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Mancala/MancalaRunner.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Mancala/controllers/SimpleController.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/services/NaivePlayerStrategy.java" afterPath="$PROJECT_DIR$/src/services/NaiveKalahPlayerStrategy.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Mancala/views/MancalaConsoleView.class" afterPath="$PROJECT_DIR$/out/production/Mancala/views/MancalaConsoleView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Mancala/views/MancalaView.class" afterPath="$PROJECT_DIR$/out/production/Mancala/views/MancalaView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MancalaRunner.java" afterPath="$PROJECT_DIR$/src/MancalaRunner.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/SimpleController.java" afterPath="$PROJECT_DIR$/src/controllers/SimpleController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/services/HumanPlayerStrategy.java" afterPath="$PROJECT_DIR$/src/services/HumanPlayerStrategy.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/BaoModel.java" afterPath="$PROJECT_DIR$/src/models/BaoModel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/KalahModel.java" afterPath="$PROJECT_DIR$/src/models/KalahModel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/MancalaModel.java" afterPath="$PROJECT_DIR$/src/models/MancalaModel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/OwareModel.java" afterPath="$PROJECT_DIR$/src/models/OwareModel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/services/NaiveKalahPlayerStrategy.java" afterPath="$PROJECT_DIR$/src/services/NaiveKalahPlayerStrategy.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,31 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SimpleController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controllers/SimpleController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-180">
-              <caret line="33" column="58" lean-forward="true" selection-start-line="33" selection-start-column="58" selection-end-line="33" selection-end-column="58" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MancalaRunner.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MancalaRunner.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="7" column="32" lean-forward="false" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="MinMaxPlayerStrategy.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/services/MinMaxPlayerStrategy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
-              <caret line="18" column="10" lean-forward="true" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+            <state relative-caret-position="360">
+              <caret line="18" column="10" lean-forward="false" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -63,11 +39,11 @@
       <file leaf-file-name="HumanPlayerStrategy.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/services/HumanPlayerStrategy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
+            <state relative-caret-position="280">
               <caret line="19" column="42" lean-forward="false" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#496#497#0" expanded="true" />
+                <element signature="e#361#362#0" expanded="false" />
+                <element signature="e#395#396#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -76,10 +52,15 @@
       <file leaf-file-name="ConsoleListener.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/services/ConsoleListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
+            <state relative-caret-position="180">
               <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#295#296#0" expanded="false" />
+                <element signature="e#366#367#0" expanded="false" />
+                <element signature="e#407#408#0" expanded="false" />
+                <element signature="e#427#428#0" expanded="false" />
+                <element signature="e#467#468#0" expanded="false" />
+                <element signature="e#505#506#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -95,21 +76,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MancalaView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/views/MancalaView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="23" column="41" lean-forward="false" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="NaiveKalahPlayerStrategy.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/services/NaiveKalahPlayerStrategy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="21" column="20" lean-forward="true" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+            <state relative-caret-position="590">
+              <caret line="35" column="31" lean-forward="true" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -120,8 +91,38 @@
       <file leaf-file-name="KalahModel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/models/KalahModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="42" column="3" lean-forward="true" selection-start-line="42" selection-start-column="3" selection-end-line="42" selection-end-column="3" />
+            <state relative-caret-position="393">
+              <caret line="141" column="16" lean-forward="true" selection-start-line="141" selection-start-column="16" selection-end-line="141" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BaoModel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/models/BaoModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="447">
+              <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OwareModel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/models/OwareModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="469">
+              <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MancalaModel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/models/MancalaModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="346">
+              <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -130,7 +131,7 @@
       <file leaf-file-name="PlayerStrategy.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/services/PlayerStrategy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
+            <state relative-caret-position="400">
               <caret line="20" column="34" lean-forward="false" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
               <folding />
             </state>
@@ -166,9 +167,6 @@
         <option value="$PROJECT_DIR$/src/models/PlayingCup.java" />
         <option value="$PROJECT_DIR$/src/controllers/SimpleMancalaController.java" />
         <option value="$PROJECT_DIR$/src/models/ScoreCup.java" />
-        <option value="$PROJECT_DIR$/src/models/MancalaModel.java" />
-        <option value="$PROJECT_DIR$/src/models/BaoModel.java" />
-        <option value="$PROJECT_DIR$/src/models/OwareModel.java" />
         <option value="$PROJECT_DIR$/src/controllers/KalahController.java" />
         <option value="$PROJECT_DIR$/src/services/RandomStrategy.java" />
         <option value="$PROJECT_DIR$/src/controllers/MancalaController.java" />
@@ -182,7 +180,10 @@
         <option value="$PROJECT_DIR$/src/services/HumanPlayerStrategy.java" />
         <option value="$PROJECT_DIR$/src/MancalaRunner.java" />
         <option value="$PROJECT_DIR$/src/services/NaivePlayerStrategy.java" />
+        <option value="$PROJECT_DIR$/src/models/MancalaModel.java" />
         <option value="$PROJECT_DIR$/src/models/KalahModel.java" />
+        <option value="$PROJECT_DIR$/src/models/BaoModel.java" />
+        <option value="$PROJECT_DIR$/src/models/OwareModel.java" />
         <option value="$PROJECT_DIR$/src/services/NaiveKalahPlayerStrategy.java" />
       </list>
     </option>
@@ -208,6 +209,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -322,9 +326,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -536,7 +537,14 @@
       <option name="project" value="LOCAL" />
       <updated>1491964537993</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Uncoupled strategy from controller, began work on naive strategy">
+      <created>1492053859696</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1492053859696</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TodoView">
@@ -554,11 +562,10 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993197" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32879817" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879817" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -575,6 +582,7 @@
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993197" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -587,7 +595,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Moved towards uncoupling simplecontroller with Human strategy, added listener class and humanplayerstrategy." />
-    <option name="LAST_COMMIT_MESSAGE" value="Moved towards uncoupling simplecontroller with Human strategy, added listener class and humanplayerstrategy." />
+    <MESSAGE value="Uncoupled strategy from controller, began work on naive strategy" />
+    <option name="LAST_COMMIT_MESSAGE" value="Uncoupled strategy from controller, began work on naive strategy" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -641,7 +650,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="16" column="21" lean-forward="false" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -671,14 +682,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="17" column="32" lean-forward="false" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
-          <folding>
-            <element signature="e#525#526#0" expanded="false" />
-            <element signature="e#553#554#0" expanded="false" />
-            <element signature="e#597#598#0" expanded="false" />
-            <element signature="e#619#620#0" expanded="false" />
-            <element signature="e#665#666#0" expanded="false" />
-            <element signature="e#696#697#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -717,14 +720,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="17" column="3" lean-forward="true" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
-          <folding>
-            <element signature="e#529#530#0" expanded="false" />
-            <element signature="e#550#551#0" expanded="false" />
-            <element signature="e#596#597#0" expanded="false" />
-            <element signature="e#627#628#0" expanded="false" />
-            <element signature="e#662#663#0" expanded="false" />
-            <element signature="e#739#740#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -740,7 +735,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="702">
           <caret line="40" column="20" lean-forward="true" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -748,14 +745,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="17" column="32" lean-forward="false" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
-          <folding>
-            <element signature="e#525#526#0" expanded="false" />
-            <element signature="e#553#554#0" expanded="false" />
-            <element signature="e#597#598#0" expanded="false" />
-            <element signature="e#619#620#0" expanded="false" />
-            <element signature="e#665#666#0" expanded="false" />
-            <element signature="e#696#697#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -777,14 +766,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="17" column="3" lean-forward="false" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
-          <folding>
-            <element signature="e#529#530#0" expanded="false" />
-            <element signature="e#550#551#0" expanded="false" />
-            <element signature="e#596#597#0" expanded="false" />
-            <element signature="e#627#628#0" expanded="false" />
-            <element signature="e#662#663#0" expanded="false" />
-            <element signature="e#739#740#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -792,14 +773,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="17" column="32" lean-forward="false" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
-          <folding>
-            <element signature="e#525#526#0" expanded="false" />
-            <element signature="e#553#554#0" expanded="false" />
-            <element signature="e#597#598#0" expanded="false" />
-            <element signature="e#619#620#0" expanded="false" />
-            <element signature="e#665#666#0" expanded="false" />
-            <element signature="e#696#697#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -807,21 +780,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="18" lean-forward="false" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/OwareModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="21" column="28" lean-forward="false" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/MancalaModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" column="49" lean-forward="false" selection-start-line="38" selection-start-column="49" selection-end-line="38" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -844,13 +802,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="445">
           <caret line="712" column="25" lean-forward="false" selection-start-line="712" selection-start-column="25" selection-end-line="712" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/BaoModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="20" column="28" lean-forward="false" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -894,18 +845,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/SimpleController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-180">
-          <caret line="33" column="58" lean-forward="true" selection-start-line="33" selection-start-column="58" selection-end-line="33" selection-end-column="58" />
-          <folding />
+        <state relative-caret-position="580">
+          <caret line="33" column="58" lean-forward="false" selection-start-line="33" selection-start-column="58" selection-end-line="33" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/services/ConsoleListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
+        <state relative-caret-position="180">
           <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#295#296#0" expanded="false" />
+            <element signature="e#366#367#0" expanded="false" />
+            <element signature="e#407#408#0" expanded="false" />
+            <element signature="e#427#428#0" expanded="false" />
+            <element signature="e#467#468#0" expanded="false" />
+            <element signature="e#505#506#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -920,43 +878,67 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/services/HumanPlayerStrategy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
+        <state relative-caret-position="280">
           <caret line="19" column="42" lean-forward="false" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#496#497#0" expanded="true" />
+            <element signature="e#361#362#0" expanded="false" />
+            <element signature="e#395#396#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/services/MinMaxPlayerStrategy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="18" column="10" lean-forward="true" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+        <state relative-caret-position="360">
+          <caret line="18" column="10" lean-forward="false" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/services/PlayerStrategy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
+        <state relative-caret-position="400">
           <caret line="20" column="34" lean-forward="false" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/MancalaModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/BaoModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/OwareModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/models/KalahModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="42" column="3" lean-forward="true" selection-start-line="42" selection-start-column="3" selection-end-line="42" selection-end-column="3" />
+        <state relative-caret-position="393">
+          <caret line="141" column="16" lean-forward="true" selection-start-line="141" selection-start-column="16" selection-end-line="141" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/services/NaiveKalahPlayerStrategy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="21" column="20" lean-forward="true" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+        <state relative-caret-position="590">
+          <caret line="35" column="31" lean-forward="true" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
