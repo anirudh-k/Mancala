@@ -13,6 +13,11 @@ public class ScoreCup implements Cup {
     this.isOwnedByFirstPlayer = isOwnedByFirstPlayer;
   }
 
+  public ScoreCup(int stones, boolean isOwnedByFirstPlayer) {
+    this.stones = stones;
+    this.isOwnedByFirstPlayer = isOwnedByFirstPlayer;
+  }
+
   public boolean isOwnedByFirstPlayer() {
     return this.isOwnedByFirstPlayer;
   }

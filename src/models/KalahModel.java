@@ -1,6 +1,7 @@
 package models;
 
 import java.util.IllegalFormatCodePointException;
+import util.MancalaUtils;
 
 /**
  * Created by paul on 3/28/17.
@@ -54,12 +55,14 @@ public class KalahModel implements MancalaModel{
   }
 
   /**
-   * Testing, game situation simulation constructor
-   * @param board
+   * Testing, copy constructor
+   * @param model the model to copy
    */
-  public KalahModel (Cup[][] board) {
-    this.isFirstPlayerTurn = true;
-    this.board = board;
+  public KalahModel (KalahModel model) {
+    this.board = MancalaUtils.copyCups(model.getCups());
+    this.isFirstPlayerTurn = model.isFirstPlayerTurn();
+    this.pieRule = model.isPieRule();
+    this.stonesPerCup = 0; // unused in a copied model
   }
 
   /**

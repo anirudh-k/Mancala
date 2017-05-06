@@ -1,5 +1,6 @@
 package services;
 
+import models.Cup;
 import models.MancalaModel;
 
 /**
@@ -13,10 +14,11 @@ import models.MancalaModel;
  * Human (takes human input)
  */
 public interface PlayerStrategy {
+
   /**
-   * Returns the strategy's sow choice given the current board configuration.
-   * @param model model to be analyzed
-   * @return an integer representing the cup to sow from
+   * Gets the next move for the given strategy
+   * @param model
+   * @return
    */
   int getMove(MancalaModel model);
 }
