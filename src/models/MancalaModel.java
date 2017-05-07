@@ -37,8 +37,9 @@ public interface MancalaModel {
   /**
    * Executes a move in the game according to the given list of rules (called sowing)
    * @param cupNum            the cup to sow from
+   * @return a boolean value representing whether the player can go again
    */
-  void sow(int cupNum);
+  boolean sow(int cupNum);
 
   /**
    * If it is the turn of the player who moved first, true, false otherwise

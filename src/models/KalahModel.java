@@ -1,6 +1,5 @@
 package models;
 
-import java.util.IllegalFormatCodePointException;
 import util.MancalaUtils;
 
 /**
@@ -32,6 +31,7 @@ public class KalahModel implements MancalaModel{
   private boolean isFirstPlayerTurn;
   private boolean pieRule;
   private int stonesPerCup;
+  private int boardLength;
 
   /**
    * Default constructor
@@ -63,6 +63,7 @@ public class KalahModel implements MancalaModel{
     this.isFirstPlayerTurn = model.isFirstPlayerTurn();
     this.pieRule = model.isPieRule();
     this.stonesPerCup = 0; // unused in a copied model
+    this.boardLength = model.getBoardLength();
   }
 
   /**
@@ -83,11 +84,13 @@ public class KalahModel implements MancalaModel{
   }
 
   @Override
-  public void sow(int cupNum) throws IllegalArgumentException {
+  public boolean sow(int cupNum) throws IllegalArgumentException {
+    cupNum -= 1;
     if (cupNum < 0 || cupNum > board[0].length) {
       throw new IllegalArgumentException("Cup " + cupNum + "out of range.");
     }
     int side;
+    boolean goAgain = false;
     if (this.isFirstPlayerTurn){
       side = 0;
     }
@@ -115,14 +118,14 @@ public class KalahModel implements MancalaModel{
 
       Cup next = board[side][count];
       if (!next.isScoring() || next.isOwnedByFirstPlayer() == this.isFirstPlayerTurn) {
-        // go again if last stone lands in your scoring cup
-        if (hand == 1 && next.isScoring()) {
-          toggleTurn();
+        if (next.isScoring() && hand == 1) {
+          goAgain = true;
         }
         next.drop(1);
         hand -= 1;
       }
     }
+    return goAgain;
   }
 
   @Override
@@ -152,7 +155,7 @@ public class KalahModel implements MancalaModel{
 
   @Override
   public int getBoardLength() {
-    return 14;
+    return this.boardLength;
   }
 
   @Override
@@ -163,10 +166,11 @@ public class KalahModel implements MancalaModel{
 
   @Override
   public void init() {
+    this.boardLength = 7;
     // board initialization
     this.board = new Cup[2][7];
     for (int i = 0; i < 2; i += 1) {
-      for (int j = 0; j < 7; j += 1) {
+      for (int j = 0; j < this.boardLength; j += 1) {
         if (j != 6) {
           board[i][j] = new PlayingCup(this.stonesPerCup, i==0);
         }

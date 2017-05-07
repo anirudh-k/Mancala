@@ -34,8 +34,11 @@ public class PlayingCup implements Cup {
   }
 
   @Override
-  public int take() {
+  public int take() throws IllegalArgumentException {
     int stones = this.stones;
+    if (stones == 0) {
+      throw new IllegalArgumentException("Cannot take from an empty cup.");
+    }
     this.stones = 0;
     return stones;
   }

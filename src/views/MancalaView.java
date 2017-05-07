@@ -23,4 +23,11 @@ public interface MancalaView {
    */
   void getInput(boolean fromFirstPlayer);
 
+  /**
+   * Displays the player's move
+   * @param fromFirstPlayer
+   * @param cupNum
+   */
+  void showMove(boolean fromFirstPlayer, int cupNum);
+
 }

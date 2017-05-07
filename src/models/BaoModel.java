@@ -18,8 +18,8 @@ public class BaoModel implements MancalaModel {
   }
 
   @Override
-  public void sow(int cupNum) {
-
+  public boolean sow(int cupNum) {
+    return false;
   }
 
 

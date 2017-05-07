@@ -48,12 +48,12 @@ public class SimpleController implements MancalaController {
    */
   @Override
   public void go() {
-    model.init();
-    view.showIntro();
-    while (!model.isGameOver()) {
-      boolean ifpt = model.isFirstPlayerTurn();
-      view.drawBoard(model.getCups());
-      view.getInput(ifpt);
+    this.model.init();
+    this.view.showIntro();
+    while (!this.model.isGameOver()) {
+      boolean ifpt = this.model.isFirstPlayerTurn();
+      this.view.drawBoard(this.model.getCups());
+      this.view.getInput(ifpt);
       int cupNum;
       if (ifpt) {
         cupNum = p1.getMove(this.model);
@@ -62,10 +62,13 @@ public class SimpleController implements MancalaController {
         cupNum = p2.getMove(this.model);
       }
       try {
-        model.sow(cupNum - 1);
-        model.toggleTurn();
+        boolean goAGain = this.model.sow(cupNum);
+        this.view.showMove(ifpt, cupNum);
+        if (!goAGain) {
+          this.model.toggleTurn();
+        }
       } catch (IllegalArgumentException e) {
-
+        e.printStackTrace();
       }
     }
   }

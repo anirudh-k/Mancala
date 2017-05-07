@@ -91,4 +91,20 @@ public class MancalaConsoleView implements MancalaView {
         e.printStackTrace();
       }
   }
+
+  @Override
+  public void showMove(boolean fromFirstPlayer, int cupNum) {
+    try {
+      if (fromFirstPlayer) {
+        a.append("Player 1 sowed from cup " + cupNum + ". ");
+      }
+      else {
+        a.append("Player 2 sowed from cup " + cupNum + ". ");
+      }
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+
+
 }

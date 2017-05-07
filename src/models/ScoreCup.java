@@ -38,7 +38,7 @@ public class ScoreCup implements Cup {
   }
 
   @Override
-  public int take() {
+  public int take() throws IllegalArgumentException {
     throw new IllegalArgumentException("Cannot take from a score cup.");
   }
 }

@@ -34,5 +34,5 @@ public interface Cup {
    * Takes all stones from this cup
    * @return the number of stones taken from this cup
    */
-  int take();
+  int take() throws IllegalArgumentException;
 }

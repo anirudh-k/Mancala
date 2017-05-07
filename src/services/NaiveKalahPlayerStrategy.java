@@ -31,7 +31,7 @@ public class NaiveKalahPlayerStrategy implements PlayerStrategy {
     int boardLength = cups[0].length;
     boolean isFirstPlayerTurn = model.isFirstPlayerTurn();
     int mostStones = 0;
-    int cupNum = 0;
+    int cupIndex = 0;
     int side;
     if (isFirstPlayerTurn) {
       side = 0;
@@ -57,9 +57,9 @@ public class NaiveKalahPlayerStrategy implements PlayerStrategy {
       }
       if (s[i][stones] > mostStones) {
         mostStones = s[i][stones];
-        cupNum = i;
+        cupIndex = i;
       }
     }
-    return cupNum;
+    return cupIndex + 1;
   }
 }

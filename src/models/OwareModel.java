@@ -19,8 +19,8 @@ public class OwareModel implements MancalaModel {
   }
 
   @Override
-  public void sow(int cupNum) {
-
+  public boolean sow(int cupNum) {
+    return false;
   }
 
   @Override
