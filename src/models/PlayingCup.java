@@ -14,6 +14,15 @@ public class PlayingCup implements Cup {
     this.isOwnedByFirstPlayer = isOwnedByFirstPlayer;
   }
 
+  /**
+   * Copy constructor
+   * @param cup
+   */
+  public PlayingCup(PlayingCup cup) {
+    this.stones = cup.getStones();
+    this.isOwnedByFirstPlayer = cup.isOwnedByFirstPlayer();
+  }
+
   public boolean isOwnedByFirstPlayer() {
     return isOwnedByFirstPlayer;
   }

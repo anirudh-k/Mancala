@@ -27,14 +27,6 @@ public interface MancalaModel {
   Cup[][] getCups();
 
   /**
-   * Gets the number of stones in the given player's hand
-   * @param isFirstPlayer
-   * @return
-   */
-  int getHand(boolean isFirstPlayer);
-
-
-  /**
    * Executes a move in the game according to the given list of rules (called sowing)
    * @param cupNum            the cup to sow from
    * @return a boolean value representing whether the player can go again
@@ -66,6 +58,13 @@ public interface MancalaModel {
    * @return
    */
   boolean isGameOver();
+
+  /**
+   * Gets the score of the given player
+   * @param player
+   * @return
+   */
+  int getScore(int player);
 
   /**
    * Sets up the board

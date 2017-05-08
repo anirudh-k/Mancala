@@ -44,6 +44,17 @@ public class KalahModel implements MancalaModel{
   }
 
   /**
+   * Default constructor
+   */
+  public KalahModel (Cup[][] board) {
+    this.isFirstPlayerTurn = true;
+    this.stonesPerCup = 4;
+    this.pieRule = false;
+    init();
+    this.board = board;
+  }
+
+  /**
    * Advanced rules constructor. Allows playing with the pie rule
    * @param stonesPerCup
    * @param pieRule
@@ -76,11 +87,6 @@ public class KalahModel implements MancalaModel{
   @Override
   public Cup[][] getCups() {
     return board;
-  }
-
-  @Override
-  public int getHand(boolean isFirstPlayer) {
-    return 0;
   }
 
   @Override
@@ -139,18 +145,9 @@ public class KalahModel implements MancalaModel{
     return this.isFirstPlayerTurn;
   }
 
-  /**
-   * Gets the score of the
-   * @param firstPlayer the first player to sow in the game
-   * @return an integer representing the given player's score ()
-   */
-  public int getScore(boolean firstPlayer) {
-    if (firstPlayer) {
-      return board[0][6].getStones();
-    }
-    else {
-      return board[1][6].getStones();
-    }
+  @Override
+  public int getScore(int player) {
+    return board[player - 1][6].getStones();
   }
 
   @Override

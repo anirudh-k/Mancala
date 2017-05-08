@@ -68,9 +68,13 @@ public class SimpleController implements MancalaController {
           this.model.toggleTurn();
         }
       } catch (IllegalArgumentException e) {
-        e.printStackTrace();
+        e.printStackTrace(); //TODO handle this error differently, do not propogate raw errors to view
       }
     }
+    int player1Score = this.model.getScore(1);
+    int player2Score = this.model.getScore(2);
+    int winner = player1Score > player2Score ? 1 : player1Score < player2Score ? 2 : 0;
+    this.view.showEnd(winner, player1Score, player2Score);
   }
 
 }

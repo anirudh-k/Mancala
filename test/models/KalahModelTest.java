@@ -15,10 +15,52 @@ public class KalahModelTest {
 
   KalahModel model;
   KalahModel modelCopy;
+  KalahModel endModel;
+  KalahModel tieModel;
 
   public void init() {
+    PlayingCup cup0 = new PlayingCup(0, true);
+    PlayingCup cup1 = new PlayingCup(0, false);
+    PlayingCup cup2 = new PlayingCup(4, true);
+    PlayingCup cup3 = new PlayingCup(4, false);
+    Cup cup4 = new ScoreCup(24, true);
+    Cup cup5 = new ScoreCup(24, false);
+    Cup cup6 = new ScoreCup(12, true);
+    Cup cup7 = new ScoreCup(36, false);
+
+    Cup[][] endBoard = {{cup0,
+        new PlayingCup(cup0),
+        new PlayingCup(cup0),
+        new PlayingCup(cup0),
+        new PlayingCup(cup0),
+        new PlayingCup(cup0),
+        cup6},
+        {cup1,
+            new PlayingCup(cup1),
+            new PlayingCup(cup1),
+            new PlayingCup(cup1),
+            new PlayingCup(cup1),
+            new PlayingCup(cup1),
+            cup7}};
+    Cup[][] tieBoard = {{cup0,
+        new PlayingCup(cup0),
+        new PlayingCup(cup0),
+        new PlayingCup(cup0),
+        new PlayingCup(cup0),
+        new PlayingCup(cup0),
+        cup4},
+        {cup3,
+            new PlayingCup(cup1),
+            new PlayingCup(cup1),
+            new PlayingCup(cup1),
+            new PlayingCup(cup1),
+            new PlayingCup(cup1),
+            cup5}};
+
     model = new KalahModel();
     modelCopy = model;
+    endModel = new KalahModel(endBoard);
+    tieModel = new KalahModel(tieBoard);
   }
 
   @Test
@@ -35,6 +77,14 @@ public class KalahModelTest {
         }
       }
     }
+  }
+
+  @Test
+  public void testIsGameOver() {
+    init();
+    assertTrue(this.tieModel.isGameOver());
+    assertTrue(this.endModel.isGameOver());
+    assertFalse(this.model.isGameOver());
   }
 
   @Test
@@ -117,6 +167,4 @@ public class KalahModelTest {
       }
     }
   }
-
-
 }

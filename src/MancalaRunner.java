@@ -6,6 +6,7 @@ import services.ConsoleListener;
 import services.HumanPlayerStrategy;
 import services.NaiveKalahPlayerStrategy;
 import services.PlayerStrategy;
+import services.RandomPlayerStrategy;
 import views.MancalaConsoleView;
 import views.MancalaView;
 
@@ -15,7 +16,7 @@ import views.MancalaView;
  */
 public class MancalaRunner {
   public static void main(String[] args) {
-    PlayerStrategy p1 = new HumanPlayerStrategy(new ConsoleListener());
+    PlayerStrategy p1 = new RandomPlayerStrategy();
     PlayerStrategy p2 = new NaiveKalahPlayerStrategy();
     MancalaModel model = new KalahModel();
     MancalaView view = new MancalaConsoleView();

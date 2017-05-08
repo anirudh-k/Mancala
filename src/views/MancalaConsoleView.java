@@ -79,6 +79,22 @@ public class MancalaConsoleView implements MancalaView {
   }
 
   @Override
+  public void showEnd(int winner, int player1Score, int player2Score) {
+    try {
+      if (winner != 0) {
+        a.append("Player " + winner + " has won!\n");
+        a.append("Score:\nPlayer 1: " + player1Score + "\n" + "Player 2: " + player2Score + "\n");
+      }
+      else {
+        a.append("Game ends in a tie.\n");
+        a.append("Score:\nPlayer 1: " + player1Score + "\n" + "Player 2: " + player2Score + "\n");
+      }
+    } catch(IOException e) {
+      e.printStackTrace();
+    }
+  }
+
+  @Override
   public void getInput(boolean fromFirstPlayer) {
     try {
       if (fromFirstPlayer) {

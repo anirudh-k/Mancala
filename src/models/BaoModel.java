@@ -13,11 +13,6 @@ public class BaoModel implements MancalaModel {
   }
 
   @Override
-  public int getHand(boolean isFirstPlayer) {
-    return 0;
-  }
-
-  @Override
   public boolean sow(int cupNum) {
     return false;
   }
@@ -41,6 +36,11 @@ public class BaoModel implements MancalaModel {
   @Override
   public boolean isGameOver() {
     return false;
+  }
+
+  @Override
+  public int getScore(int player) {
+    return 0;
   }
 
   @Override

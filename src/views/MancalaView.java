@@ -19,6 +19,12 @@ public interface MancalaView {
   void showIntro();
 
   /**
+   * Displays the end game sequence. if winner = 0, the game is a tie
+   * @param winner
+   */
+  void showEnd(int winner, int player1Score, int player2Score);
+
+  /**
    * Prompts user for input
    */
   void getInput(boolean fromFirstPlayer);
